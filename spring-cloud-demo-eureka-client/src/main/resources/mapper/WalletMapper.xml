@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tom.eurekaclient.dao.WalletMapper">
+    <resultMap id="BaseResultMap" type="com.tom.eurekaclient.model.Wallet">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="balance" property="balance" jdbcType="DOUBLE"/>
+    </resultMap>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT
+            id,
+            username,
+            balance
+        FROM wallet
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        DELETE FROM wallet
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="wallet" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO wallet (username, balance)
+        VALUES (#{username,jdbcType=VARCHAR}, #{balance,jdbcType=DOUBLE})
+    </insert>
+    <insert id="insertSelective" parameterType="wallet">
+        insert into wallet
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="balance != null">
+                balance,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="balance != null">
+                #{balance,jdbcType=DOUBLE},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="wallet">
+        update wallet
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="balance != null">
+                balance = #{balance,jdbcType=DOUBLE},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="wallet">
+        UPDATE wallet
+        SET username = #{username,jdbcType=VARCHAR},
+            balance  = #{balance,jdbcType=DOUBLE}
+        WHERE id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT
+        id,
+        username,
+        balance
+        FROM wallet
+        WHERE username = #{username,jdbcType=VARCHAR}
+    </select>
+</mapper>
