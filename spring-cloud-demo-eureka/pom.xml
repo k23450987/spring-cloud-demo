@@ -29,10 +29,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-		</dependency>
+      <!-- 已废弃 迁移至 spring-cloud-starter-netflix-eureka-server -->
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>

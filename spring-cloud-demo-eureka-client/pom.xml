@@ -33,6 +33,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+            <!-- 已废弃 迁移至 spring-cloud-starter-netflix-eureka -->
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

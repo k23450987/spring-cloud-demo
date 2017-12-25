@@ -33,8 +33,9 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
-		<dependency>
+      <!-- 已废弃 迁移至 spring-cloud-starter-netflix-eureka -->
+    </dependency>
+    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>

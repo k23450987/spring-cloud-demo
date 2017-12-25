@@ -2,11 +2,10 @@ package com.example.eurekaconsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @EnableFeignClients
-@EnableDiscoveryClient
+// @EnableDiscoveryClient Edgware 版本已经可以不用添加这个注解了
 @SpringBootApplication
 public class ConsumerApplication {
 
