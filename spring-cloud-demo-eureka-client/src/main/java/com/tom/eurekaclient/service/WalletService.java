@@ -10,6 +10,7 @@ public interface WalletService {
 
     /**
      * 存钱
+     *
      * @param amount 金额
      * @param username 账户
      */
@@ -17,6 +18,7 @@ public interface WalletService {
 
     /**
      * 取钱
+     *
      * @param amount 金额
      * @param username 账户
      */

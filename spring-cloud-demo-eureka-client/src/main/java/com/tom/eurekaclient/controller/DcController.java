@@ -12,7 +12,7 @@ public class DcController {
     private DiscoveryClient discoveryClient;
 
     @GetMapping("/dc")
-    public String dc(){
+    public String dc() {
         return String.valueOf(discoveryClient.getServices());
     }
 }
